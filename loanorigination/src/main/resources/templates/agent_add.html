@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Agent</title>
+</head>
+<body>
+    <h2>Add New Agent</h2>
+    <form th:action="@{/agent/save}" th:object="${agent}" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" th:field="*{name}" id="name" placeholder="Agent Name" required>
+        </div>
+        <div>
+            <label for="contact">Contact:</label>
+            <input type="text" th:field="*{contact}" id="contact" placeholder="Contact Info" required>
+        </div>
+        <div>
+            <button type="submit">Save Agent</button>
+        </div>
+    </form>
+    <a href="/agent/list">Back to Agent List</a>
+</body>
+</html>

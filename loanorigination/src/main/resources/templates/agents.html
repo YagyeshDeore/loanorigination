@@ -1,0 +1,16 @@
+<h1>Agents</h1>
+<form action="/agents" method="post">
+    Name: <input type="text" name="name" />
+    Branch: <input type="text" name="branch" />
+    <button type="submit">Create Agent</button>
+</form>
+
+<h2>All Agents</h2>
+<table border="1">
+    <tr><th>ID</th><th>Name</th><th>Branch</th></tr>
+    <tr th:each="agent : ${agents}">
+        <td th:text="${agent.id}"></td>
+        <td th:text="${agent.name}"></td>
+        <td th:text="${agent.branch}"></td>
+    </tr>
+</table>

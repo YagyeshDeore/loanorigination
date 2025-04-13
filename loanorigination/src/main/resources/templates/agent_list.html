@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent List</title>
+</head>
+<body>
+    <h2>Agent List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="agent : ${agents}">
+                <td th:text="${agent.id}"></td>
+                <td th:text="${agent.name}"></td>
+                <td th:text="${agent.contact}"></td>
+                <td>
+                    <a th:href="@{/agent/edit/{id}(id=${agent.id})}">Edit</a>
+                    <a th:href="@{/agent/delete/{id}(id=${agent.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/agent/add">Add New Agent</a>
+</body>
+</html>

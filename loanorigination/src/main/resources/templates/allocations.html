@@ -1,0 +1,17 @@
+<h1>Allocate Lead to Agent</h1>
+<form action="/allocations" method="post">
+    Lead ID: <input type="number" name="leadId" />
+    Agent ID: <input type="number" name="agentId" />
+    <button type="submit">Allocate</button>
+</form>
+
+<h2>All Allocations</h2>
+<table border="1">
+    <tr><th>ID</th><th>Lead ID</th><th>Agent ID</th><th>Allocated At</th></tr>
+    <tr th:each="alloc : ${allocations}">
+        <td th:text="${alloc.id}"></td>
+        <td th:text="${alloc.leadId}"></td>
+        <td th:text="${alloc.agentId}"></td>
+        <td th:text="${alloc.allocatedAt}"></td>
+    </tr>
+</table>
